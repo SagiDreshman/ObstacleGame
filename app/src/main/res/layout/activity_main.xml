@@ -1,89 +1,74 @@
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/gameLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="16dp">
 
-    <!-- לבבות חיים -->
+    <!-- Container for hearts -->
     <LinearLayout
-        android:id="@+id/heartsLayout"
+        android:id="@+id/heartsContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_margin="@dimen/heart_layout_margin"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        android:layout_gravity="top|end"
+        android:padding="8dp">
 
         <ImageView
             android:id="@+id/heart1"
             android:layout_width="@dimen/heart_width"
             android:layout_height="@dimen/heart_height"
             android:src="@drawable/heart"
-            android:contentDescription="Heart 1"/>
+            android:contentDescription="Heart 1" />
+
         <ImageView
             android:id="@+id/heart2"
             android:layout_width="@dimen/heart_width"
             android:layout_height="@dimen/heart_height"
             android:layout_marginStart="8dp"
             android:src="@drawable/heart"
-            android:contentDescription="Heart 2"/>
+            android:contentDescription="Heart 2" />
+
         <ImageView
             android:id="@+id/heart3"
             android:layout_width="@dimen/heart_width"
             android:layout_height="@dimen/heart_height"
             android:layout_marginStart="8dp"
             android:src="@drawable/heart"
-            android:contentDescription="Heart 3"/>
+            android:contentDescription="Heart 3" />
+
     </LinearLayout>
 
-    <!-- שחקן -->
+    <!-- Left arrow button -->
+    <ImageButton
+        android:id="@+id/btnLeft"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:layout_gravity="bottom|start"
+        android:layout_marginBottom="@dimen/button_marginBottom"
+        android:src="@drawable/arrow_left"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Move Left" />
+
+    <!-- Right arrow button -->
+    <ImageButton
+        android:id="@+id/btnRight"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="@dimen/button_marginBottom"
+        android:src="@drawable/arrow_right"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Move Right" />
+
+    <!-- Player -->
     <ImageView
         android:id="@+id/player"
         android:layout_width="@dimen/player_width"
         android:layout_height="@dimen/player_height"
-        android:layout_marginBottom="@dimen/distanceBottom"
-        android:src="@drawable/player_image"
-        app:layout_constraintBottom_toTopOf="@+id/btnLeft"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:contentDescription="Player"/>
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="@dimen/player_marginBottom"
+        android:src="@drawable/player"
+        android:contentDescription="Player" />
 
-    <!-- מכשול -->
-    <ImageView
-        android:id="@+id/obstacle"
-        android:layout_width="@dimen/obstacle_width"
-        android:layout_height="@dimen/obstacle_height"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/obstacle_image"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:contentDescription="Obstacle"/>
-
-    <!-- כפתור שמאלה בקצה השמאלי התחתון -->
-    <ImageButton
-        android:id="@+id/btnLeft"
-        android:layout_width="@dimen/left_button_width"
-        android:layout_height="@dimen/left_button_height"
-        android:src="@drawable/arrow_left"
-        android:background="@android:color/transparent"
-        android:contentDescription="Move Left"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_margin="@dimen/distance_bottom"/>
-
-    <!-- כפתור ימינה בקצה הימני התחתון -->
-    <ImageButton
-        android:id="@+id/btnRight"
-        android:layout_width="@dimen/right_button_width"
-        android:layout_height="@dimen/right_button_height"
-        android:src="@drawable/arrow_right"
-        android:background="@android:color/transparent"
-        android:contentDescription="Move Right"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="@dimen/distance_bottom"/>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
