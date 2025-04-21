@@ -3,7 +3,6 @@ package dev.tomco.a25b_11345a_l05.utilities
 import android.content.Context
 import android.content.Context.VIBRATOR_MANAGER_SERVICE
 import android.content.Context.VIBRATOR_SERVICE
-import android.os.Binder
 import android.os.Build
 import android.os.VibrationEffect
 import android.os.Vibrator
