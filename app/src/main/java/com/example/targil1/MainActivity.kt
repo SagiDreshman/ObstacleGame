@@ -1,13 +1,13 @@
 package com.example.targil1
 
 import android.app.Activity
-import android.app.AlertDialog
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.widget.FrameLayout
 import android.widget.ImageButton
 import android.widget.ImageView
+import dev.tomco.a25b_11345a_l05.utilities.SignalManager
 import kotlin.random.Random
 
 class MainActivity : Activity() {
@@ -32,6 +32,9 @@ class MainActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        // Initialize SignalManager
+        SignalManager.init(this)
 
         gameLayout = findViewById(R.id.gameLayout)
         player     = findViewById(R.id.player)
@@ -64,7 +67,6 @@ class MainActivity : Activity() {
     private fun placePlayer() {
         val laneWidth = gameLayout.width / numCols
         val cellHeight = gameLayout.height / numRows
-        // שחקן מעט מעל התחתית: raise by חצי תא
         val bottomY = gameLayout.height - player.height
         val yOffset = cellHeight / 2
         val yPos = bottomY - yOffset
@@ -123,20 +125,25 @@ class MainActivity : Activity() {
 
     private fun loseLife() {
         lives--
+
         when (lives) {
-            2 -> heart3.visibility = ImageView.GONE
-            1 -> heart2.visibility = ImageView.GONE
+            2 -> {
+                heart3.visibility = ImageView.GONE
+                SignalManager.getInstance().vibrate()
+                SignalManager.getInstance().toast("You lost a life")
+            }
+            1 -> {
+                heart2.visibility = ImageView.GONE
+                SignalManager.getInstance().vibrate()
+                SignalManager.getInstance().toast("You lost a life")
+            }
             0 -> {
                 heart1.visibility = ImageView.GONE
                 handler.removeCallbacks(obstacleRunnable)
                 btnLeft.isEnabled = false
                 btnRight.isEnabled = false
-                AlertDialog.Builder(this)
-                    .setTitle("GAME OVER")
-                    .setMessage("Game Over")
-                    .setCancelable(false)
-                    .setPositiveButton("OK") { _, _ -> finish() }
-                    .show()
+                SignalManager.getInstance().vibrate()
+                SignalManager.getInstance().toast("Game Over")
             }
         }
     }
