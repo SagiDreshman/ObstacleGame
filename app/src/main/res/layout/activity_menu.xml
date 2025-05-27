@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- רקע -->
+    <ImageView
+        android:id="@+id/backgroundImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/menu_background"
+        android:contentDescription="@null" />
+
+    <!-- הצללה מעל התמונה -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#66000000" />
+
+    <!-- כפתורים מעל -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btnSensorMode"
+            android:text="מצב חיישן"
+            android:textSize="18sp"
+            android:backgroundTint="#039BE5"
+            android:textColor="#FFFFFF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:padding="12dp" />
+
+        <Button
+            android:id="@+id/btnSlowMode"
+            android:text="מצב איטי (כפתורים)"
+            android:textSize="18sp"
+            android:backgroundTint="#039BE5"
+            android:textColor="#FFFFFF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:padding="12dp" />
+
+        <Button
+            android:id="@+id/btnFastMode"
+            android:text="מצב מהיר (כפתורים)"
+            android:textSize="18sp"
+            android:backgroundTint="#039BE5"
+            android:textColor="#FFFFFF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:padding="12dp" />
+
+        <Button
+            android:id="@+id/btnScores"
+            android:text="טבלת שיאים"
+            android:textSize="18sp"
+            android:backgroundTint="#4CAF50"
+            android:textColor="#FFFFFF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:padding="12dp" />
+
+    </LinearLayout>
+
+</FrameLayout>

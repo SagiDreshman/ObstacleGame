@@ -8,4 +8,5 @@
     <dimen name="player_width">80dp</dimen>
     <dimen name="player_height">80dp</dimen>
     <dimen name="player_marginBottom">100dp</dimen>
+    <dimen name="button_margin">16dp</dimen>
 </resources>

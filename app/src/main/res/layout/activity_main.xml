@@ -71,4 +71,16 @@
         android:src="@drawable/player"
         android:contentDescription="Player" />
 
+
+    <TextView
+        android:id="@+id/distanceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Distance: 0"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:layout_margin="16dp"
+        android:layout_gravity="top|start" />
+
+
 </FrameLayout>

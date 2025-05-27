@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Targil1</string>
+    <string name="app_name">Targil1</string> <!-- או מה שיש לך -->
+    <string name="please_enter_location">הכנס מיקום</string>
+    <string name="send">שלח</string>
 </resources>

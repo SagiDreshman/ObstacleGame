@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scoreboardRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#E3F2FD"
+    android:padding="16dp">
+
+    <!-- כותרת -->
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🏆 טבלת שיאים"
+        android:textSize="24sp"
+        android:textColor="#0D47A1"
+        android:gravity="center"
+        android:layout_marginBottom="16dp" />
+
+    <!-- רשימת השיאים -->
+    <FrameLayout
+        android:id="@+id/highScoreContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/scoreboard_card"
+        android:layout_marginBottom="8dp" />
+
+    <!-- מפת מיקום -->
+    <FrameLayout
+        android:id="@+id/mapContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/map_card" />
+
+</LinearLayout>
